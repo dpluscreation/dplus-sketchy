@@ -81,6 +81,7 @@ input[type=number]{width:100%;box-sizing:border-box;background:var(--p2);color:v
 img.logo{width:28px;height:28px;border-radius:8px;display:block;object-fit:cover;background:none}
 .pname{width:130px;height:30px;border:1px solid transparent;background:transparent;color:var(--tx);border-radius:8px;padding:0 8px;font:inherit;font-weight:600}
 .pname:hover{border-color:var(--bd)}.pname:focus{outline:none;border-color:var(--ac);background:var(--p2)}.pname::placeholder{color:var(--mu);font-weight:400}
+#pat{pointer-events:none}
 </style></head><body><svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
 <symbol id="i-brush" viewBox="0 0 24 24"><path d="M3 21l1.2-4.2L16 5l3 3L7.2 19.8z"/><path d="M14 7l3 3"/></symbol>
 <symbol id="i-eraser" viewBox="0 0 24 24"><path d="M4 16L13 7l5 5-8 8H7z"/><path d="M12 20h9"/></symbol>
@@ -104,6 +105,7 @@ img.logo{width:28px;height:28px;border-radius:8px;display:block;object-fit:cover
 <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="1.8"/><path d="M21 16l-5-5-9 9"/></symbol>
 <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.5"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M18.7 5.3l-2.1 2.1M7.4 16.6l-2.1 2.1"/></symbol>
 <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.6 9.4a2.5 2.5 0 114.2 1.8c-.9.8-1.8 1.2-1.8 2.8M12 17.2v.3"/></symbol>
+<symbol id="i-pattern" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.2"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.2"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.2"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.2"/></symbol>
 </defs></svg>
 <div class="app">
 <div id="bar"><div class="brand"><img class="logo" src="data:image/png;base64,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" alt="" width="28" height="28">D'plus Sketchy</div>
@@ -111,6 +113,7 @@ img.logo{width:28px;height:28px;border-radius:8px;display:block;object-fit:cover
 <div class="seg"><button id="tb" title="Brush (B)"><svg class="ic"><use href="#i-brush"/></svg></button><button id="te" title="Eraser (E)"><svg class="ic"><use href="#i-eraser"/></svg></button><button id="tm" title="Move layer (V) · Shift+drag rotate · Alt+drag scale"><svg class="ic"><use href="#i-move"/></svg></button></div>
 <input type="color" id="col" class="swatch" value="#111111" title="Colour (Alt+click on the canvas picks a colour)">
 <div class="seg"><button id="bh" title="Mirror horizontal (1)"><svg class="ic"><use href="#i-fliph"/></svg></button><button id="bv" title="Mirror vertical (2)"><svg class="ic"><use href="#i-flipv"/></svg></button><button id="br" title="Rotate 180° (3)"><svg class="ic"><use href="#i-rot"/></svg></button><button id="bk" title="Mandala / kaleidoscope (K)"><svg class="ic"><use href="#i-mandala"/></svg></button><button id="bkm" class="mini" data-menu title="Mandala options">▾</button></div>
+<div class="seg"><button id="bp" title="Seamless pattern mode (T)"><svg class="ic"><use href="#i-pattern"/></svg></button><button id="bpm" class="mini" data-menu title="Pattern options">▾</button></div>
 <div class="seg"><button id="bg" class="on" title="Guides (Shift+G)"><svg class="ic"><use href="#i-guides"/></svg></button><button id="bgr" title="Grid (G)"><svg class="ic"><use href="#i-grid"/></svg></button><button id="bt" title="Turn view 180°"><svg class="ic"><use href="#i-turn"/></svg></button><button id="bi" title="Invert canvas colours (I)"><svg class="ic"><use href="#i-invert"/></svg></button></div>
 <div class="seg"><button id="un" title="Undo (Ctrl+Z)"><svg class="ic"><use href="#i-undo"/></svg></button><button id="rd" title="Redo (Ctrl+Y)"><svg class="ic"><use href="#i-redo"/></svg></button><button id="cl" title="Clear active layer"><svg class="ic"><use href="#i-trash"/></svg></button></div>
 <div class="seg"><button id="zo" class="txt" title="Zoom out (-)">−</button><span id="zl">100%</span><button id="zi" class="txt" title="Zoom in (+)">+</button><button id="zf" class="txt" title="Fit to screen (0)">Fit</button></div>
@@ -118,7 +121,7 @@ img.logo{width:28px;height:28px;border-radius:8px;display:block;object-fit:cover
 <div class="seg"><button id="hs" data-tip title="Brush settings"><svg class="ic"><use href="#i-sliders"/></svg></button><button id="hl" title="Layers"><svg class="ic"><use href="#i-layers"/></svg></button><button id="pvb" title="Preview window, replay and video (P)"><svg class="ic"><use href="#i-preview"/></svg></button></div>
 <div class="seg"><button id="sv" title="Save project (Ctrl+S)"><svg class="ic"><use href="#i-save"/></svg></button><label class="ib" title="Open project"><svg class="ic"><use href="#i-open"/></svg><input type="file" id="op" accept=".json,application/json" hidden></label><button id="psd" class="txt" title="Export PSD with layers">PSD</button><button id="png" title="Export PNG"><svg class="ic"><use href="#i-image"/></svg></button></div>
 <div class="seg"><button id="bset" data-menu title="Settings"><svg class="ic"><use href="#i-gear"/></svg></button><button id="bhelp" data-menu title="Help and shortcuts (?)"><svg class="ic"><use href="#i-help"/></svg></button></div></div>
-<div id="main"><div id="vp"><div id="stage"><canvas id="cv"></canvas><canvas id="ov"></canvas></div></div>
+<div id="main"><div id="vp"><div id="stage"><canvas id="pat" style="display:none"></canvas><canvas id="cv"></canvas><canvas id="ov"></canvas></div></div>
 <div class="panel" id="side" hidden><div class="ph"><b>Brush</b><button id="xs" class="x" title="Close">✕</button></div>
 <h4>Brush tip</h4><div class="chips" id="chips"></div><button id="cbn" class="solo">+ Custom brush</button>
 <h4>Settings</h4><div id="sl"></div>
@@ -151,8 +154,16 @@ img.logo{width:28px;height:28px;border-radius:8px;display:block;object-fit:cover
 <h4>Grid spacing</h4><select id="gs" style="width:100%"><option>25</option><option selected>50</option><option>100</option></select>
 <h4>Appearance</h4><button id="bd" class="solo" style="width:100%">Dark mode</button></div>
 <div id="pman" class="menu" hidden><h3>Mandala</h3><div class="row"><span>Segments</span><input type="range" id="kn" min="2" max="24" value="6"><span id="kv">6</span></div><label><input type="checkbox" id="km" checked> Mirror each segment</label></div>
+<div id="ppat" class="menu" hidden><h3>Seamless pattern</h3>
+<div class="row"><span>Tile size</span><select id="ptile" style="width:100%"><option value="256">256 px</option><option value="512">512 px</option><option value="1024" selected>1024 px</option><option value="2048">2048 px</option></select><span></span></div>
+<div class="row"><span>Repeat</span><select id="pmode" style="width:100%"><option value="grid">Straight grid</option><option value="brick">Brick</option><option value="drop">Half-drop</option></select><span></span></div>
+<label><input type="checkbox" id="pdim" checked> Dim the repeated tiles</label><br>
+<label><input type="checkbox" id="ppv" checked> Show the repeat in preview and video</label>
+<button id="poff" class="solo" style="width:100%;margin-top:8px" title="Slide the artwork half a tile so you can check and paint over the seams">Offset by half</button>
+<h4>Export</h4><div class="row"><span>Sheet</span><select id="psheet" style="width:100%"><option value="n,3">3 × 3 tiles</option><option value="n,4">4 × 4 tiles</option><option value="p,1920,1080">Wallpaper 1920×1080</option><option value="p,3840,2160">Wallpaper 3840×2160</option></select><span></span></div>
+<button id="pexp" class="solo" style="width:100%">Export tiled sheet (PNG)</button></div>
 <div id="phelp" class="menu" hidden><h3>Help</h3><h4>Keyboard shortcuts</h4><div class="keys">
-<b>B / E / V</b><span>Brush, eraser, move tool</span><b>1 / 2 / 3</b><span>Flip H, Flip V, Rotate 180°</span><b>K</b><span>Mandala on/off</span>
+<b>B / E / V</b><span>Brush, eraser, move tool</span><b>1 / 2 / 3</b><span>Flip H, Flip V, Rotate 180°</span><b>K</b><span>Mandala on/off</span><b>T</b><span>Seamless pattern on/off</span>
 <b>G / Shift+G</b><span>Grid / guides</span><b>I / D</b><span>Invert / dark mode</span><b>N</b><span>New layer</span><b>Ctrl+J</b><span>Duplicate layer</span>
 <b>Delete</b><span>Delete layer</span><b>[ ] / { }</b><span>Brush size / hardness</span><b>0 / + / −</b><span>Fit / zoom in / zoom out</span><b>Space</b><span>Pan (hold and drag)</span>
 <b>P</b><span>Preview window</span><b>Tab</b><span>Hide or show panels</span><b>Ctrl+Z / Y</b><span>Undo / redo</span><b>Ctrl+S</b><span>Save project</span><b>? / Esc</b><span>Help / close menus</span></div>
@@ -166,6 +177,7 @@ img.logo{width:28px;height:28px;border-radius:8px;display:block;object-fit:cover
 <li>Mirror and mandala copies are live previews. They also appear in the replay, video and PNG.</li>
 <li>Resizing the canvas keeps your drawing anchored to the top-left.</li>
 <li>The project name next to the logo is used for saved file names (project, PNG, PSD and video).</li>
+<li>Pattern mode: strokes wrap around the tile edges, so the repeat is always seamless. Export PNG saves one tile; the pattern menu exports a repeated sheet.</li>
 <li>With a mask selected, the brush hides and the eraser reveals.</li></ul>
 <h4>About</h4><div class="mu">D'plus Sketchy · MIT License · © 2026 D'plus Creation</div></div>
 <script>
@@ -190,7 +202,7 @@ const S={h:true,v:false,r:false},V={z:1,x:0,y:0,f:false};
 let G=true,GR=false,INV=false,hist=[],redo=[],cur=null,pan=null,mv=null,space=false,sm=null,t0=0,rp=null,dirty=1,act=0,nid=0,D={L:[],P:{}},sel=new Set(),emask=false,lastPt=null,picking=false;
 let props=D.P;const tmp=cc().getContext('2d');
 function symSet(){const set=new Set(['0,0']),ops=[];if(S.h)ops.push([1,0]);if(S.v)ops.push([0,1]);if(S.r)ops.push([1,1]);for(const o of ops)for(const k of[...set]){const[a,b]=k.split(',').map(Number);set.add((a^o[0])+','+(b^o[1]))}return[...set].map(k=>k.split(',').map(Number))}
-function snap(){return{t:'st',id:act,tip:P.tip,hard:P.hard,size:P.size,opacity:P.opacity,flow:P.flow,spacing:P.spacing,round:P.round,angle:P.angle,scatter:P.scatter,jitter:P.jitter,pSize:P.pSize,pFlow:P.pFlow,minSize:P.minSize,color:B.color,eraser:tool==='eraser',mk:!!curMask(),sym:[[0,0]],seed:Math.random()*1e9|0,pts:[]}}
+function snap(){return{t:'st',id:act,tip:P.tip,hard:P.hard,size:P.size,opacity:P.opacity,flow:P.flow,spacing:P.spacing,round:P.round,angle:P.angle,scatter:P.scatter,jitter:P.jitter,pSize:P.pSize,pFlow:P.pFlow,minSize:P.minSize,color:B.color,eraser:tool==='eraser',mk:!!curMask(),wrap:PAT.on,sym:[[0,0]],seed:Math.random()*1e9|0,pts:[]}}
 /* ---------- stamping engine (shared by live drawing, undo rebuild, replay) ---------- */
 function Stroker(t,s){
  const col=tint(getTip(s.tip,s.hard),s.color),r=rng(s.seed);let L=null,carry=0;
@@ -199,7 +211,11 @@ function Stroker(t,s){
   let fl=s.flow/100*(s.pFlow?p:1);if(s.eraser||s.mk)fl*=s.opacity/100;
   if(s.scatter){x+=(r()-.5)*2*s.scatter/100*sz;y+=(r()-.5)*2*s.scatter/100*sz}
   const w=sz,h=sz*s.round/100;
-  for(const[fx,fy]of s.sym){t.save();t.globalAlpha=fl;t.translate(fx?W-x:x,fy?H-y:y);t.scale(fx?-1:1,fy?-1:1);t.rotate(s.angle*Math.PI/180);t.drawImage(col,-w/2,-h/2,w,h);t.restore()}
+  const cull=s.wrap&&t.getTransform().isIdentity,rad=Math.hypot(w,h)/2;
+  for(const[fx,fy]of s.sym){const px=fx?W-x:x,py=fy?H-y:y;
+   for(let a=s.wrap?-1:0;a<=(s.wrap?1:0);a++){const ox=px+a*W;if(cull&&(ox+rad<0||ox-rad>W))continue;
+    for(let b=s.wrap?-1:0;b<=(s.wrap?1:0);b++){const oy=py+b*H;if(cull&&(oy+rad<0||oy-rad>H))continue;
+     t.save();t.globalAlpha=fl;t.translate(ox,oy);t.scale(fx?-1:1,fy?-1:1);t.rotate(s.angle*Math.PI/180);t.drawImage(col,-w/2,-h/2,w,h);t.restore()}}}
  }
  return(x,y,p)=>{if(!L){dab(x,y,p);L=[x,y,p];return}
   const dx=x-L[0],dy=y-L[1],d=Math.hypot(dx,dy),st=Math.max(1,s.size*s.spacing/100);let u=st-carry;
@@ -236,7 +252,7 @@ function apply(d,s,q){const L=find(d,s.id);
 function compose(g,d,live,invert){g.setTransform(1,0,0,1,0,0);g.globalAlpha=1;g.globalCompositeOperation='source-over';g.fillStyle='#fff';g.fillRect(0,0,W,H);
  const ms=symMats();
  for(const l of d.L){const p=d.P[l.id];if(!p.vis)continue;const im=layerImg(l);
-  for(const M of ms){g.setTransform(...mul(M,l.xf));g.globalAlpha=p.op;g.globalCompositeOperation=p.bm||'source-over';g.drawImage(im,0,0);
+  for(const m of layerMats(l,ms)){g.setTransform(...m);g.globalAlpha=p.op;g.globalCompositeOperation=p.bm||'source-over';g.drawImage(im,0,0);
    if(live&&live.L===l&&!live.s.eraser&&!live.s.mk){g.globalAlpha=p.op*live.s.opacity/100;g.drawImage(live.c,0,0)}}}
  g.globalCompositeOperation='source-over';g.setTransform(1,0,0,1,0,0);g.globalAlpha=1;
  if(invert){g.globalCompositeOperation='difference';g.fillStyle='#fff';g.fillRect(0,0,W,H);g.globalCompositeOperation='source-over'}}
@@ -308,6 +324,7 @@ const zc=f=>{const r=vp.getBoundingClientRect();zoomAt(r.left+r.width/2,r.top+r.
 $('zi').onclick=()=>zc(1.25);$('zo').onclick=()=>zc(.8);$('zf').onclick=fit;$('bt').onclick=e=>{V.f=!V.f;e.target.classList.toggle('on',V.f);applyV()};
 addEventListener('resize',fit);
 function guides(){octx.clearRect(0,0,W,H);const u=1/V.z;octx.setLineDash([]);
+ if(PAT.on){octx.strokeStyle='#6c5ce7';octx.globalAlpha=.9;octx.lineWidth=2*u;octx.strokeRect(u,u,W-2*u,H-2*u);octx.globalAlpha=1}
  if(GR){const n=+$('gs').value;octx.strokeStyle=INV?'#fff':'#000';octx.globalAlpha=.14;octx.lineWidth=u;octx.beginPath();for(let x=0;x<=W;x+=n){octx.moveTo(x,0);octx.lineTo(x,H)}for(let y=0;y<=H;y+=n){octx.moveTo(0,y);octx.lineTo(W,y)}octx.stroke()}
  if(G){octx.strokeStyle='#e8453c';octx.globalAlpha=.7;octx.lineWidth=1.5*u;octx.setLineDash([6*u,6*u]);octx.beginPath();
   if(S.h||S.r){octx.moveTo(W/2,0);octx.lineTo(W/2,H)}if(S.v||S.r){octx.moveTo(0,H/2);octx.lineTo(W,H/2)}octx.stroke();
@@ -333,7 +350,7 @@ addEventListener('keydown',e=>{
  if(e.code==='Space'){space=true;curUpd();e.preventDefault();return}
  const m=e.ctrlKey||e.metaKey,k=e.key.toLowerCase();
  if(m){if(k==='z'){e.shiftKey?redoF():undo();e.preventDefault()}else if(k==='y'){redoF();e.preventDefault()}else if(k==='j'){dupL();e.preventDefault()}else if(k==='s'){saveProj();e.preventDefault()}return}
- const A={b:()=>setTool('brush'),e:()=>setTool('eraser'),v:()=>setTool('move'),'1':()=>tglS('h'),'2':()=>tglS('v'),'3':()=>tglS('r'),g:()=>e.shiftKey?tglG():tglGR(),i:tglI,d:()=>$('bd').click(),n:addL,k:tglK,tab:togglePanels,p:()=>$('pvb').click(),'0':fit,'=':()=>zc(1.25),'+':()=>zc(1.25),'-':()=>zc(.8),delete:delL,backspace:delL,'[':()=>sz(-4),']':()=>sz(4),'{':()=>hd(-10),'}':()=>hd(10)}[k];
+ const A={b:()=>setTool('brush'),e:()=>setTool('eraser'),v:()=>setTool('move'),'1':()=>tglS('h'),'2':()=>tglS('v'),'3':()=>tglS('r'),g:()=>e.shiftKey?tglG():tglGR(),i:tglI,d:()=>$('bd').click(),n:addL,k:tglK,t:()=>tglPat(),tab:togglePanels,p:()=>$('pvb').click(),'0':fit,'=':()=>zc(1.25),'+':()=>zc(1.25),'-':()=>zc(.8),delete:delL,backspace:delL,'[':()=>sz(-4),']':()=>sz(4),'{':()=>hd(-10),'}':()=>hd(10)}[k];
  if(A){A();e.preventDefault()}});
 addEventListener('keyup',e=>{if(e.code==='Space'){space=false;curUpd()}});
 /* ---------- brush panel (brush and eraser keep separate settings) ---------- */
@@ -346,7 +363,7 @@ const TL=[['tb','brush'],['te','eraser'],['tm','move']];
 function setTool(t){tool=t;P=t==='eraser'?E:B;for(const[id,n]of TL)$(id).classList.toggle('on',n===t);syncSl();chips();prev()}
 for(const[id,n]of TL)$(id).onclick=()=>setTool(n);
 function chips(){const el=$('chips');el.innerHTML='';for(const id of['round',...Object.keys(tips)]){const b=document.createElement('button');b.className='chip'+(P.tip===id?' on':'');const t=cc(48,48),g=t.getContext('2d');g.drawImage(getTip(id,60),0,0,48,48);g.globalCompositeOperation='source-in';g.fillStyle=id===P.tip?'#fff':'#8a8a99';g.fillRect(0,0,48,48);b.append(t);b.onclick=()=>{P.tip=id;chips();prev()};el.append(b)}}
-function prev(){curUpd();const c=$('pr'),g=c.getContext('2d');g.clearRect(0,0,240,56);const s={...snap(),size:Math.min(P.size,34),sym:[[0,0]],eraser:false,color:tool==='eraser'?'#888':B.color},a=Stroker(g,s);for(let i=0;i<=70;i++)a(12+i*3.1,28+Math.sin(i/9)*13,Math.sin(i/70*Math.PI)*.9+.1)}
+function prev(){curUpd();const c=$('pr'),g=c.getContext('2d');g.clearRect(0,0,240,56);const s={...snap(),size:Math.min(P.size,34),sym:[[0,0]],wrap:false,eraser:false,color:tool==='eraser'?'#888':B.color},a=Stroker(g,s);for(let i=0;i<=70;i++)a(12+i*3.1,28+Math.sin(i/9)*13,Math.sin(i/70*Math.PI)*.9+.1)}
 /* ---------- custom brush maker ---------- */
 const cb=$('cb'),cbc=$('cbc'),cg=cbc.getContext('2d');let cbD=false,cbL=null;
 function cbClear(){cg.fillStyle='#fff';cg.fillRect(0,0,128,128)}
@@ -363,7 +380,7 @@ const pwh=$('pwh');let dr=null;
 pwh.onpointerdown=e=>{if(e.target.tagName==='BUTTON')return;const r=pw.getBoundingClientRect();dr=[e.clientX-r.left,e.clientY-r.top];pwh.setPointerCapture(e.pointerId)};
 pwh.onpointermove=e=>{if(dr){pw.style.left=e.clientX-dr[0]+'px';pw.style.top=e.clientY-dr[1]+'px';pw.style.right='auto'}};pwh.onpointerup=()=>dr=null;
 function drawPrev(){compose(tg2,rp?rp.d:D,rp?(rp.cur&&{L:rp.cur.L,s:rp.cur.s,c:rp.q.canvas}):liveMain(),INV);
- pg.setTransform(1,0,0,1,0,0);pg.setTransform(...VM()[+$('pvm').value]);pg.drawImage(tc,0,0,PW,PH);pg.setTransform(1,0,0,1,0,0)}
+ pg.setTransform(1,0,0,1,0,0);pg.setTransform(...VM()[+$('pvm').value]);if(PAT.on&&PAT.pv)tileTo(pg,tc,PW,PH,4);else pg.drawImage(tc,0,0,PW,PH);pg.setTransform(1,0,0,1,0,0)}
 function startReplay(exp){
  stopReplay(true);if(hist.length<2){msg('Nothing drawn yet');return}
  const tl=[];let T=0;for(const s of hist){tl.push({s,a:T});T+=s.t==='st'?(s.pts.length?s.pts[s.pts.length-1][3]:0)+140:120}
@@ -384,7 +401,7 @@ function stopReplay(abort){const r=rp;if(!r)return;rp=null;
  if(r.rec){r.rec.onstop=()=>{if(!abort)save(new Blob(r.ch,{type:r.mt||'video/webm'}),fileBase()+'.'+(r.mt&&r.mt.includes('mp4')?'mp4':'webm'))};r.rec.stop()}
  msg(abort?'Stopped':r.rec?'Video ready':'Done')}
 $('prp').onclick=()=>startReplay(false);$('pre').onclick=()=>startReplay(true);$('pst').onclick=()=>stopReplay(true);
-function loop(now){if(dirty||cur){compose(dg,D,liveMain(),INV);dirty=0}if(!pw.hidden){stepReplay(now);drawPrev()}requestAnimationFrame(loop)}
+function loop(now){if(dirty||cur){compose(dg,D,liveMain(),INV);if(PAT.on)drawPat();dirty=0}if(!pw.hidden){stepReplay(now);drawPrev()}requestAnimationFrame(loop)}
 async function save(blob,name){try{const dl=window.claude&&await claude.use('downloads');if(dl){await dl.save({filename:name,data:blob});return}}catch(e){if(e&&e.code==='declined')return}
  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;a.click()}
 $('png').onclick=()=>{const c=cc();compose(c.getContext('2d'),D,null,INV);c.toBlob(b=>save(b,fileBase()+'.png'))};
@@ -405,19 +422,19 @@ $('cps').innerHTML=PRE.map(([n],i)=>`<option value="${i}">${n}</option>`).join('
 function setSize(w,h){if(cur)return;W=Math.max(64,Math.min(4096,Math.round(w)||1200));H=Math.max(64,Math.min(4096,Math.round(h)||800));
  for(const c of[cv,ov,sc,tmp.canvas,tc,lt]){c.width=W;c.height=H}
  const k=Math.min(1,1920/Math.max(W,H));PW=Math.round(W*k);PH=Math.round(H*k);pv.width=PW;pv.height=PH;
- stage.style.width=W+'px';stage.style.height=H+'px';$('cw').value=W;$('ch').value=H;
+ stage.style.width=W+'px';stage.style.height=H+'px';$('cw').value=W;$('ch').value=H;if(W===H&&[256,512,1024,2048].includes(W))$('ptile').value=W;
  const i=PRE.findIndex(p=>p[1]===W&&p[2]===H);$('cps').value=i<0?PRE.length-1:i;
- stopReplay(true);rb();fit()}
+ stopReplay(true);rb();patLayout();fit()}
 $('cps').onchange=e=>{const[,w,h]=PRE[+e.target.value];if(w)setSize(w,h)};$('cap').onclick=()=>setSize(+$('cw').value,+$('ch').value);$('cps').value=0;
 const pan2=(id,b,show)=>{const el=$(id);el.hidden=show===undefined?!el.hidden:!show;$(b).classList.toggle('on',!el.hidden)};
 $('hs').onclick=()=>pan2('side','hs');$('hl').onclick=()=>pan2('lay','hl');
 function togglePanels(){const show=$('side').hidden&&$('lay').hidden;pan2('side','hs',show);pan2('lay','hl',show)}
 function saveProj(){const tp={};for(const id in tips)tp[id]=tips[id].toDataURL();
- save(new Blob([JSON.stringify({app:'dplus-sketchy',v:1,W,H,hist,props,nid,act,S,K,INV,tips:tp,imgs:imgSrc,name:$('pname').value})],{type:'application/json'}),fileBase()+'.dplus.json')}
+ save(new Blob([JSON.stringify({app:'dplus-sketchy',v:1,W,H,hist,props,nid,act,S,K,INV,tips:tp,imgs:imgSrc,name:$('pname').value,pat:PAT})],{type:'application/json'}),fileBase()+'.dplus.json')}
 async function loadProj(f){const p=JSON.parse(await f.text());if(p.app!=='dplus-sketchy')throw 0;
  for(const[id,u]of Object.entries(p.tips||{}))await new Promise(r=>{const im=new Image();im.onload=()=>{const t=cc(128,128);t.getContext('2d').drawImage(im,0,0);tips[id]=t;r()};im.src=u});
  for(const[k,u]of Object.entries(p.imgs||{}))await new Promise(r=>{const im=new Image();im.onload=()=>{imgs[k]=toCanvas(im);imgSrc[k]=u;r()};im.onerror=r;im.src=u});
- $('pname').value=p.name||'';setTitle();hist=p.hist;redo=[];for(const k in legacy)delete legacy[k];Object.assign(legacy,p.props||{});nid=p.nid;act=p.act;Object.assign(S,p.S);Object.assign(K,p.K);INV=p.INV;
+ $('pname').value=p.name||'';setTitle();Object.assign(PAT,{on:false,mode:'grid',dim:true,pv:true},p.pat||{});syncPat();hist=p.hist;redo=[];for(const k in legacy)delete legacy[k];Object.assign(legacy,p.props||{});nid=p.nid;act=p.act;Object.assign(S,p.S);Object.assign(K,p.K);INV=p.INV;
  for(const[k,id]of Object.entries(tgs))$(id).classList.toggle('on',S[k]);$('bk').classList.toggle('on',K.on);$('bi').classList.toggle('on',INV);$('kn').value=K.n;$('kv').textContent=K.n;$('km').checked=K.mir;
  chips();setSize(p.W,p.H)}
 $('sv').onclick=saveProj;$('op').onchange=async e=>{const f=e.target.files[0];e.target.value='';if(f)try{await loadProj(f)}catch(x){$('pt').textContent='Could not open that project file'}};
@@ -462,7 +479,7 @@ function curUpd(){const brush=tool!=='move'&&!space&&!pan&&!altDown,d=P.size*V.z
 vp.addEventListener('pointermove',e=>{const r=vp.getBoundingClientRect();cx=e.clientX-r.left;cy=e.clientY-r.top;cin=true;altDown=e.altKey;curUpd()});
 vp.addEventListener('pointerleave',()=>{cin=false;curUpd()});
 /* ---------- compact UI: menus, panel close buttons ---------- */
-const MENUS=[['bset','pset'],['bhelp','phelp'],['bkm','pman']];
+const MENUS=[['bset','pset'],['bhelp','phelp'],['bkm','pman'],['bpm','ppat']];
 function closeMenus(){for(const[b,m]of MENUS){$(m).hidden=true;$(b).classList.remove('on')}}
 for(const[b,m]of MENUS)$(b).onclick=()=>{const open=$(m).hidden;closeMenus();if(!open)return;const el=$(m);el.hidden=false;$(b).classList.add('on');const r=$(b).getBoundingClientRect();el.style.top=r.bottom+8+'px';el.style.left=Math.max(8,Math.min(innerWidth-el.offsetWidth-8,r.left))+'px'};
 addEventListener('pointerdown',e=>{if(!e.target.closest('.menu,[data-menu]'))closeMenus()});
@@ -486,7 +503,7 @@ function cat(parts){let n=0;for(const p of parts)n+=p.length;const o=new Uint8Ar
 async function buildPSD(){
  const ms=symMats(),items=[],bgc=cc().getContext('2d');bgc.fillStyle='#fff';bgc.fillRect(0,0,W,H);
  items.push({name:'Background',vis:true,op:1,bm:'source-over',img:bgc.getImageData(0,0,W,H)});
- for(const l of D.L){const p=D.P[l.id],g=cc().getContext('2d');for(const M of ms){g.setTransform(...mul(M,l.xf));g.drawImage(layerImg(l),0,0)}
+ for(const l of D.L){const p=D.P[l.id],g=cc().getContext('2d');for(const m of layerMats(l,ms)){g.setTransform(...m);g.drawImage(layerImg(l),0,0)}
   items.push({name:p.name,vis:p.vis,op:p.op,bm:p.bm||'source-over',img:g.getImageData(0,0,W,H)})}
  const recs=[],data=[],ids=[-1,0,1,2];
  for(const it of items){
@@ -509,6 +526,29 @@ $('psd').onclick=async e=>{const b=e.currentTarget;b.textContent='…';await new
 const fileBase=()=>($('pname').value.trim().replace(/[\\/:*?"<>|]+/g,'-').slice(0,60))||'dplus-sketchy';
 function setTitle(){const n=$('pname').value.trim();document.title=n?n+" - D'plus Sketchy":"D'plus Sketchy"}
 $('pname').oninput=setTitle;$('pname').onkeydown=e=>{if(e.key==='Enter'||e.key==='Escape')e.target.blur()};
+/* ---------- seamless pattern mode ---------- */
+const PAT={on:false,mode:'grid',dim:true,pv:true};
+const isId=m=>m[0]===1&&m[1]===0&&m[2]===0&&m[3]===1&&m[4]===0&&m[5]===0;
+function layerMats(l,ms){const out=[],wr=PAT.on&&!isId(l.xf),o=wr?[-1,0,1]:[0];
+ for(const M of ms)for(const a of o)for(const b of o){const m0=mul(M,l.xf);out.push(a||b?mul([1,0,0,1,a*W,b*H],m0):m0)}return out}
+function patLayout(){const c=$('pat');c.style.display=PAT.on?'block':'none';if(!PAT.on)return;
+ const ps=Math.min(1,3072/(3*Math.max(W,H)));c.width=Math.max(1,Math.round(3*W*ps));c.height=Math.max(1,Math.round(3*H*ps));
+ c.style.left=-W+'px';c.style.top=-H+'px';c.style.width=3*W+'px';c.style.height=3*H+'px'}
+function drawPat(){const c=$('pat'),g=c.getContext('2d'),ps=c.width/(3*W);g.setTransform(ps,0,0,ps,0,0);g.globalAlpha=1;g.fillStyle=INV?'#000':'#fff';g.fillRect(0,0,3*W,3*H);g.globalAlpha=PAT.dim?.5:1;
+ for(let j=-2;j<=2;j++)for(let i=-2;i<=2;i++){if(!i&&!j)continue;const ox=PAT.mode==='brick'&&(j&1)?W/2:0,oy=PAT.mode==='drop'&&(i&1)?H/2:0;g.drawImage(cv,W+i*W+ox,H+j*H+oy)}g.globalAlpha=1}
+function tileTo(g,img,w,h,n){const tw=w/n,th=h/n;for(let j=-1;j<=n;j++)for(let i=-1;i<=n;i++){const ox=PAT.mode==='brick'&&(j&1)?tw/2:0,oy=PAT.mode==='drop'&&(i&1)?th/2:0;g.drawImage(img,i*tw+ox,j*th+oy,tw,th)}}
+function syncPat(){$('bp').classList.toggle('on',PAT.on);$('pmode').value=PAT.mode;$('pdim').checked=PAT.dim;$('ppv').checked=PAT.pv}
+function tglPat(on){PAT.on=on===undefined?!PAT.on:on;if(PAT.on&&W!==H)setSize(1024,1024);syncPat();patLayout();dirty=1;guides();if(PAT.on){const r=vp.getBoundingClientRect(),z=Math.min(r.width/(2.3*W),r.height/(2.3*H));V.z=z;V.x=(r.width-W*z)/2;V.y=(r.height-H*z)/2;applyV()}}
+$('bp').onclick=()=>tglPat();
+$('ptile').onchange=e=>setSize(+e.target.value,+e.target.value);
+$('pmode').onchange=e=>{PAT.mode=e.target.value;dirty=1};$('pdim').onchange=e=>{PAT.dim=e.target.checked;dirty=1};$('ppv').onchange=e=>{PAT.pv=e.target.checked};
+$('poff').onclick=()=>{if(!PAT.on||cur)return;const T=[1,0,0,1,W/2,H/2];
+ doS({t:'xfs',a:D.L.map(l=>{const m=mul(T,l.xf);m[4]=((m[4]%W)+W)%W;m[5]=((m[5]%H)+H)%H;return[l.id,m]})})};
+$('pexp').onclick=()=>{const[kind,a,b]=$('psheet').value.split(',');let w=kind==='n'?W*+a:+a,h=kind==='n'?H*+a:+b;
+ const k=Math.min(1,8192/Math.max(w,h)),c=cc(Math.round(w*k),Math.round(h*k)),g=c.getContext('2d'),t=cc(),tg=t.getContext('2d');compose(tg,D,null,INV);
+ g.fillStyle=INV?'#000':'#fff';g.fillRect(0,0,c.width,c.height);g.scale(k,k);
+ for(let j=-1;j*H<h;j++)for(let i=-1;i*W<w;i++){const ox=PAT.mode==='brick'&&(j&1)?W/2:0,oy=PAT.mode==='drop'&&(i&1)?H/2:0;g.drawImage(t,i*W+ox,j*H+oy)}
+ c.toBlob(bl=>save(bl,fileBase()+'-sheet.png'))};
 /* ---------- init ---------- */
 setTheme(matchMedia('(prefers-color-scheme: dark)').matches);setTool('brush');addL();fit();requestAnimationFrame(loop);
 if('serviceWorker'in navigator)addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
