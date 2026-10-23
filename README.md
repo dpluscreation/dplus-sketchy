@@ -2,8 +2,7 @@
 
 A sketch app for designing ambigrams and mandalas, running entirely in your browser. No account, no server: everything you draw stays on your own computer.
 
-**Try it online:** https://YOUR-USERNAME.github.io/dplus-sketchy/
-
+**Try it online:** (https://dpluscreation.github.io/dplus-sketchy/)
 ## Features
 - Layers with move / rotate / scale, opacity, blend modes, masks, groups and merge
 - Live symmetry preview: Flip H, Flip V, Rotate 180° and a 2-24 segment mandala mode
